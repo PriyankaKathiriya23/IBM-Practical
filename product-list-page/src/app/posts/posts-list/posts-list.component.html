@@ -1,0 +1,58 @@
+
+<div class="table-responsive">
+        <table class="table table-striped" >
+                <thead>
+                        <tr>
+                          <th scope="col">id</th>
+                          <th scope="col">uid</th>
+                          <th scope="col">strain</th>
+                          <th scope="col">cannabinoid_abbreviation</th>
+                          <th scope="col">cannabinoid</th>
+                          <th scope="col">terpene</th>
+                          <th scope="col">medical_use</th>
+                          <th scope="col">health_benefit</th>
+                          <th scope="col">category</th>
+                          <th scope="col">type</th>
+                          <th scope="col">category</th>
+                          <th scope="col">buzzword</th>
+                          <th scope="col">brand</th>
+                        </tr>
+                      </thead>
+
+            <tbody>
+    <tr *ngFor="let post of posts$ | async">
+       <td>{{ post.id }}</td>
+        <td> {{ post.uid }}</td>
+        <td>{{ post.strain }}</td>
+        <td>{{ post.cannabinoid_abbreviation }}</td>
+        <td>{{ post.cannabinoid }}</td>
+        <td>{{ post.terpene }}</td>
+        <td>{{ post.medical_use }}</td>
+        <td>{{ post.health_benefit }}</td>
+        <td>{{ post.category }}</td>
+        <td>{{ post.type }}</td>
+        <td>{{ post.category }}</td>
+        <td>{{ post.buzzword }}</td>
+        <td>{{ post.brand }}</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+<div class="row">
+        <div class="d-flex justify-content-center">
+                <div class=" float-left mr-1">
+                        <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event)" name="pagesize">10 per page
+                              <option value="10">10 Per Page</option>  
+                              <option value="20">20 Per Page</option>  
+                              <option value="30">30 Per Page</option>                  
+                        </select>
+                </div>
+                <div class="btn-group float-right">
+                        <button class="btn btn-outline-primary active" *ngFor="let of pageNumbers">1</button>
+                        <button class="btn btn-outline-primary ">1</button>
+                        <button class="btn btn-outline-primary ">1</button>
+                        <button class="btn btn-outline-primary ">1</button>
+                </div>
+        </div>
+</div>
